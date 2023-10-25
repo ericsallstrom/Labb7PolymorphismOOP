@@ -25,11 +25,6 @@ namespace Labb7PolymorphismOOP
             return area;
         }
 
-        protected override string GetGeometricType()
-        {
-            return base.GetGeometricType();
-        }
-
         public override void PrintCalculations()
         {
             if (MajorRadius <= 0 || MinorRadius <= 0)

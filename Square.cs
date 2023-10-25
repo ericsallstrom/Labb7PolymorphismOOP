@@ -2,8 +2,14 @@
 
 namespace Labb7PolymorphismOOP
 {
+    // Square-klassen ärver från Geometry-klassen.
     internal class Square : Geometry
     {
+        /* Publik egenskap med set-funktionen satt till privat
+         * eftersom jag inte vill att värdet skall kunna ändras
+         * efter instansiering av ett objekt. Men användaren skall
+         * fortfarande kunna erhålla och använda värdet, därav är
+         * get-funktionen publik, vilket också är standard.*/
         public double Sides { get; private set; }
 
         public Square()
@@ -14,11 +20,6 @@ namespace Labb7PolymorphismOOP
         public Square(double sides)
         {
             Sides = sides;
-        }
-
-        protected override string GetGeometricType()
-        {
-            return base.GetGeometricType();
         }
 
         public override double Area()

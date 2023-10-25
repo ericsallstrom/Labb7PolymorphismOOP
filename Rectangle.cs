@@ -19,11 +19,6 @@ namespace Labb7PolymorphismOOP
             Height = height;
         }
 
-        protected override string GetGeometricType()
-        {
-            return base.GetGeometricType();
-        }
-
         public override double Area()
         {
             double area = Width * Height;

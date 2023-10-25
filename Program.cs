@@ -15,7 +15,7 @@ namespace Labb7PolymorphismOOP
                 new Square(), new Square(sides: 9),
                 new Ellipse(), new Ellipse(majorRadius: 5, minorRadius: 3),
                 new Rectangle(), new Rectangle(width: 4, height: 5),
-                new Parallellogram(), new Parallellogram(width: 5, height: 3)
+                new Parallellogram(), new Parallellogram(width: 5, height: 3),                
             };
 
             foreach (Geometry shape in shapes)
