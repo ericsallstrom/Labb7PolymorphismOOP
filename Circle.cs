@@ -8,11 +8,13 @@ namespace Labb7PolymorphismOOP
     // Circle-klassen ärver från Geometry-klassen.
     internal class Circle : Geometry
     {
-        /* Publik egenskap med set-funktionen satt till privat
-         * eftersom jag inte vill att värdet skall kunna ändras
-         * efter instansiering av ett objekt. Men användaren skall
+        /* För Circle-klassen krävs en egenskap som representerar 
+         * en cirkels radie för att kunna beräkna arean.
+         * "Radius" är en publik egenskap med set-funktionen satt till 
+         * privat eftersom värdet bör ej kunna ändras efter
+         * instansiering av ett objekt. Men användaren skall
          * fortfarande kunna erhålla och använda värdet, därav är
-         * get-funktionen publik, vilket också är standard.*/
+         * get-funktionen publik, vilket också är standard. */
         public double Radius { get; private set; }
 
         // Publik bas-konstruktor där "Radius" tilldelas ett defaultvärde.        
@@ -21,26 +23,27 @@ namespace Labb7PolymorphismOOP
             Radius = 5;            
         }
 
-        /* Publik överlagrad konstruktor som även gör det möjligt för 
+        /* Publik överlagrad konstruktor som gör det möjligt för 
          * användaren att mata in ett eget värde, som sedan tilldelas 
-         * till "Radius", vid instansieringen av ett Circle-objekt.*/
+         * till "Radius", vid instansieringen av ett Circle-objekt. */
         public Circle(double radius)
         {
             Radius = radius;           
         }
 
-        // Publik överskuggad metod som returnerar arean av en cirkel.
+        // Publik överskuggad metod som returnerar arean av en 
+        // cirkel och är disponibel även utanför klassen.
         public override double Area()
         {
             double area = _pi * Math.Pow(Radius, 2);
             return area;
         }
 
-        /* Publik överskuggad metod som först kollar om "Radius" är 
-         * mindre än eller lika med 0. Om så är fallet skrivs ett 
-         * felmeddelande ut att beräkningen ej kunde genomföras. 
-         * Annars skrivs beräkningen av cirkelns area ut.*/
-        public override void PrintCalculations()
+        /* Publik överskuggad metod i vilken en if-sats först kontrollerar 
+         * om "Radius" är mindre eller lika med 0. Om så är fallet 
+         * skrivs ett felmeddelande ut att beräkningen ej kunde 
+         * genomföras. Annars skrivs beräkningen av cirkelns area ut. */
+        public override void PrintCalculation()
         {
             if (Radius <= 0)
             {
